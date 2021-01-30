@@ -20,21 +20,23 @@ fun main() {
     val x2 = readInt(msg="Digite o valor de x2: ")
     val y2 = readInt(msg="Digite o valor de y2: ")
 
-    var p1 = Ponto(x1!!, y1!!)//!!foça converão inteiro
-    var p2 = Ponto(x2!!, y2!!)//!!foça converão inteiro
+    var p1 = Exercicio1.Ponto(x1!!, y1!!)//!!foça converão inteiro
+    var p2 = Exercicio1.Ponto(x2!!, y2!!)//!!foça converão inteiro
 
-    var resultado = calcularDistancia(p1, p2)
+    var resultado = Exercicio1.calcularDistancia(p1, p2)
 
     println("----------------------------------")
     println("Distancia Calculada: $resultado")
     println("Fim!")
 }
 
-class Ponto(val x: Int, val y: Int)
+object Exercicio1 {
+    class Ponto(val x: Int, val y: Int)
 
-fun calcularDistancia(p1: Ponto, p2: Ponto): Int {
-    val x2MenosX1 = (p2.x - p1.x).toDouble()
-    val y2MenosY1 = (p2.y - p1.y).toDouble()
-    val resultado = sqrt(x2MenosX1.pow(2) + y2MenosY1.pow(2))
-    return resultado.toInt()
+    fun calcularDistancia(p1: Ponto, p2: Ponto): Int {
+        val x2MenosX1 = (p2.x - p1.x).toDouble()
+        val y2MenosY1 = (p2.y - p1.y).toDouble()
+        val resultado = sqrt(x2MenosX1.pow(2) + y2MenosY1.pow(2))
+        return resultado.toInt()
+    }
 }

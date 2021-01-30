@@ -1,6 +1,8 @@
 package dev.estudos.kotlin.exercicios
 
 import java.lang.NumberFormatException
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlin.system.exitProcess
 
 fun readInt(msg:String): Int ?{
@@ -20,4 +22,8 @@ fun readInt(msg:String): Int ?{
         return readInt(msg)
     }
     return valor
+}
+
+fun LocalDate.formatToBrazil(): String {
+    return  this.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 }

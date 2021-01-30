@@ -14,20 +14,23 @@ fun main() {
     val b = readInt(msg="Digite o segundo número inteiro: ")
     val c = readInt(msg="Digite o terceiro número inteiro: ")
 
-    val r = calcularR(a!!, b!!)
-    val s = calcularS(b!!, c!!)
-    val d = calcularD(r!!, s!!)
+    val r = Exercicio2.calcularR(a!!, b!!)
+    val s = Exercicio2.calcularS(b!!, c!!)
+    val d = Exercicio2.calcularD(r!!, s!!)
     print("O resultado é: ${d}")
 }
 
-fun calcularD(r: Int, s: Int): Int {
-    return (r + s)/2
-}
+object Exercicio2 {
 
-fun calcularR(a: Int, b: Int): Int {
-    return (a + b).toDouble().pow(2).toInt()
-}
+    fun calcularD(r: Int, s: Int): Int {
+        return (r + s) / 2
+    }
 
-fun calcularS(b: Int, c: Int): Int {
-    return (b + c).toDouble().pow(2).toInt()
+    fun calcularR(a: Int, b: Int): Int {
+        return (a + b).toDouble().pow(2).toInt()
+    }
+
+    fun calcularS(b: Int, c: Int): Int {
+        return (b + c).toDouble().pow(2).toInt()
+    }
 }
