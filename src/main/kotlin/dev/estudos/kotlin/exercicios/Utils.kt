@@ -14,7 +14,7 @@ fun readInt(msg:String): Int ?{
     }
 
     val valor = try {
-        valorDigitado?.toIntOrNull()
+        valorDigitado?.toInt()
     } catch (e: NumberFormatException){
         println("Informe um valor correto!")
         return readInt(msg)

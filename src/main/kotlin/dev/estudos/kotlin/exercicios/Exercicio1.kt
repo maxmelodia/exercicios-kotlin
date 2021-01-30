@@ -25,6 +25,7 @@ fun main() {
 
     var resultado = calcularDistancia(p1, p2)
 
+    println("----------------------------------")
     println("Distancia Calculada: $resultado")
     println("Fim!")
 }
