@@ -2,6 +2,9 @@ package dev.estudos.kotlin.exercicios
 
 //2. Escreva um algoritmo que leia três números inteiros e positivos (A, B, C) e
 //calcule a seguinte expressão:
+//R = (A + B)²
+//S = (B + C)²
+//D = R + S / 2
 
 import kotlin.math.pow
 
@@ -11,9 +14,20 @@ fun main() {
     val b = readInt(msg="Digite o segundo número inteiro: ")
     val c = readInt(msg="Digite o terceiro número inteiro: ")
 
-    val r = (a!! + b!!).toDouble().pow(2)
-    val s = (b!! + c!!).toDouble().pow(2)
-
-    val d = (r + s)/2
+    val r = calcularR(a!!, b!!)
+    val s = calcularS(b!!, c!!)
+    val d = calcularD(r!!, s!!)
     print("O resultado é: ${d}")
+}
+
+fun calcularD(r: Int, s: Int): Int {
+    return (r + s)/2
+}
+
+fun calcularR(a: Int, b: Int): Int {
+    return (a + b).toDouble().pow(2).toInt()
+}
+
+fun calcularS(b: Int, c: Int): Int {
+    return (b + c).toDouble().pow(2).toInt()
 }
