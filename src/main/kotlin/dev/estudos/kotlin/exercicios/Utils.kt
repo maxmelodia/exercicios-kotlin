@@ -5,6 +5,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.system.exitProcess
 
+//https://github.com/fmarlon/exercicios-kotlin
 fun readInt(msg:String): Int ?{
     print(msg)
 

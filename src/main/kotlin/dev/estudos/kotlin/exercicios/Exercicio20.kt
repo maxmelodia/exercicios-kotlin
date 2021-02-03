@@ -4,8 +4,6 @@ package dev.estudos.kotlin.exercicios
 //por um cliente. O algoritmo deve receber o código de um produto e a
 //quantidade comprada e calcular o preço total, usando a tabela abaixo:
 
-
-
 fun main() {
     val prod = 1001
     val qtd = 10
@@ -21,15 +19,8 @@ object Exercicio20 {
                                                  TabelaPreco(987, 5.32),
                                                  TabelaPreco(7623, 6.45))
 
-
     fun calcularPreco(id: Int, qnt: Int): Double {
-        val tabela  = tabelaPreco.filter { it.id == id }
-
-        var total: Double = 0.0
-
-        for (t in tabela) {
-            total += (t.preco * qnt)
-        }
+        val total  = tabelaPreco.filter { it.id == id }.map{ it.preco * qnt }.first()
         return total
     }
 }

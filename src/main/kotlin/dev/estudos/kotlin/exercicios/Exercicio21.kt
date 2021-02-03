@@ -9,12 +9,8 @@ fun main() {
     val prod = "ABCD"
     val qtd = 10
 
-    val filtro = Exercicio21.tabelaPreco.filter { it.produto == prod }
-
-    if (filtro.size > 0) {
+    if (Exercicio21.validarProdutoTabela(prod)) {
         println("O total devido do produto $prod é:  ${Exercicio21.calcularPreco(prod, qtd)} ")
-    } else {
-        println("Nenhum produto encontrado!")
     }
 }
 
@@ -29,12 +25,17 @@ object Exercicio21 {
 
 
     fun calcularPreco(produto: String, qnt: Int): Double {
-        val tabela  = Exercicio21.tabelaPreco.filter { it.produto == produto }
-        var total: Double = 0.0
-
-        for (t in tabela) {
-            total += (t.preco * qnt)
-        }
+        val total  = Exercicio21.tabelaPreco.filter { it.produto == produto }.map{ it.preco * qnt }.first()
         return total
+    }
+
+    fun validarProdutoTabela(produto: String): Boolean {
+        val filtro = Exercicio21.tabelaPreco.filter { it.produto == produto }
+
+        if (filtro.size == 0) {
+            println("Nenhum produto encontrado!")
+            return false
+        }
+        return true
     }
 }
