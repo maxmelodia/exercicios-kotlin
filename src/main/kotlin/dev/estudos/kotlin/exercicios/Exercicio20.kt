@@ -9,7 +9,7 @@ package dev.estudos.kotlin.exercicios
 fun main() {
     val prod = 1001
     val qtd = 10
-    println("O total do produto $prod:  ${Exercicio20.calcularPreco(prod, qtd)} ")
+    println("O total devido  $prod é:  ${Exercicio20.calcularPreco(prod, qtd)} ")
 }
 
 object Exercicio20 {
